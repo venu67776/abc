@@ -1,0 +1,10 @@
+image: node:latest
+pipelines:
+  default:
+    - step:
+        script:
+          - docker login -u venuzs -p venu@1234
+          - docker build -t venuzs/frontend:v1 .
+          - docker push venuzs/frontend:v1
+options:
+  docker: true
